@@ -96,11 +96,11 @@ namespace Singel_Linked_List
             return true;
         }
 
-        public bool Search(int rollNo,ref Node preveious, ref Node current)
+        public bool Search(int rollNo, ref Node preveious, ref Node current)
         {
-            preveious= START;
-            current= START;
-            while ((current != null)&&(rollNo != current.RollNumber))
+            preveious = START;
+            current = START;
+            while ((current != null) && (rollNo != current.RollNumber))
             {
                 preveious = current;
                 current = current.Next;
