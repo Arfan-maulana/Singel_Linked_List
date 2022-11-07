@@ -62,12 +62,76 @@ namespace Singel_Linked_List
 
             }
 
+            Node preveious, current;
+            preveious = START;
+            current = START;
 
 
+            while((current != null)&&(rollNo >= current.RollNumber))
+            {
+                if (rollNo == current.RollNumber)
+                {
+                    Console.WriteLine();
+                    return;
 
-
-
+                }
+                preveious.Next = current;
+                preveious.Next = newnode;
+            }
+            newnode.Next = current;
+            preveious.Next = newnode;
         }
+       
+
+        public bool delnote(int rollNo)
+        {
+            Node preveious, current;
+            preveious = current = null;
+
+                if(Search(rollNo, ref preveious, ref current) == false)
+                return false;
+            preveious.Next = current.Next;
+            if (current == START)
+                START = START.Next;
+            return true;
+        }
+
+        public bool Search(int rollNo,ref Node preveious, ref Node current)
+        {
+            preveious= START;
+            current= START;
+            while ((current != null)&&(rollNo != current.RollNumber))
+            {
+                preveious = current;
+                current = current.Next;
+
+            }
+            if (current == null)
+                return false;
+            else
+                return true;
+        }
+
+        public void Treverse()
+        {
+
+            if (listEmpty())
+                Console.WriteLine();
+            else
+            {
+                Console.WriteLine();
+                Node currentNode;
+                for (currentNode = START; currentNode != null;
+                     currentNode = currentNode.Next)
+                    Console.WriteLine(currentNode.RollNumber + ""
+                    + currentNode.Name + "\n");
+                Console.WriteLine();
+
+
+            }
+        }
+        
+
 
 
     }
