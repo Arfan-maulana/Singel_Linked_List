@@ -81,19 +81,19 @@ namespace Singel_Linked_List
             newnode.Next = current;
             preveious.Next = newnode;
         }
-       
 
         public bool delnote(int rollNo)
         {
             Node preveious, current;
             preveious = current = null;
 
-                if(Search(rollNo, ref preveious, ref current) == false)
+            if (Search(rollNo, ref preveious, ref current) == false)
                 return false;
             preveious.Next = current.Next;
             if (current == START)
                 START = START.Next;
             return true;
+
         }
 
         public bool Search(int rollNo, ref Node preveious, ref Node current)
