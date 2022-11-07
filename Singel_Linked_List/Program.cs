@@ -44,7 +44,7 @@ namespace Singel_Linked_List
             newnode.Name = nm;
 
             //if the node to be inserted is the first node
-            if(START == null || (rollNo <= START.RollNumber))
+            if (START == null || (rollNo <= START.RollNumber))
             {
                 if (START != null && (rollNo == START.RollNumber))
                 {
@@ -67,7 +67,7 @@ namespace Singel_Linked_List
             current = START;
 
 
-            while((current != null)&&(rollNo >= current.RollNumber))
+            while ((current != null) && (rollNo >= current.RollNumber))
             {
                 if (rollNo == current.RollNumber)
                 {
@@ -141,14 +141,14 @@ namespace Singel_Linked_List
 
 
     }
-     class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            list obj= new list();
+            list obj = new list();
             while (true)
             {
-              try
+                try
                 {
                     Console.WriteLine("\nMenu");
                     Console.WriteLine("1. Add a record to the list ");
@@ -158,7 +158,7 @@ namespace Singel_Linked_List
                     Console.WriteLine("5. Exit ");
                     Console.WriteLine("\nEnter your choice (1-5) :");
                     char ch = Convert.ToChar(Console.ReadLine());
-                    switch(ch)
+                    switch (ch)
                     {
                         case '1':
                             {
@@ -169,21 +169,21 @@ namespace Singel_Linked_List
                         case '2':
                             {
 
-                                if(obj.listEmpty())
+                                if (obj.listEmpty())
                                 {
                                     Console.WriteLine("\nList is empty");
                                     break;
                                 }
                                 Console.WriteLine("Enter the roll number of" + "the student whose record is to be deleted :");
-                                int rollNo= Convert.ToInt32(Console.ReadLine());
+                                int rollNo = Convert.ToInt32(Console.ReadLine());
                                 if (obj.delnote(rollNo) == false)
                                     Console.WriteLine("\n Record not found");
                                 else
                                     Console.WriteLine("Recordwith roll number" + rollNo + "Deleted");
-                            }   
-                            break ;
+                            }
+                            break;
 
-                        case'3':
+                        case '3':
                             {
                                 obj.Treverse();
                             }
@@ -212,23 +212,22 @@ namespace Singel_Linked_List
                             }
                             break;
 
-                                case '5':
-                                    return;
-                               default:
+                        case '5':
+                            return;
+                        default:
                             {
                                 Console.WriteLine("\nInvalid Option");
                                 break;
                             }
 
-                            
-                    }   
+
+                    }
                 }
-            }
-
-
-
-
+                catch(Exception)
+                {
+                    Console.WriteLine();
+                }
+             }
         }
-        
-    }
-}
+     } 
+} 
