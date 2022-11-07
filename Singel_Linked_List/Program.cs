@@ -27,11 +27,11 @@ namespace Singel_Linked_List
         public list()
         {
 
-            START = null;// add a node in the list
-
+            START = null;
 
         }
-        public void addnote()
+        public void addnote()// add a node in the list
+
         {
             int rollNo;
             string nm;
@@ -42,6 +42,25 @@ namespace Singel_Linked_List
             Node newnode = new Node();
             newnode.RollNumber = rollNo;
             newnode.Name = nm;
+
+            //if the node to be inserted is the first node
+            if(START == null || (rollNo <= START.RollNumber))
+            {
+                if (START != null && (rollNo == START.RollNumber))
+                {
+
+                    Console.WriteLine();
+                    return;
+
+
+                }
+                newnode.Next = START;
+                START = newnode;
+                return;
+
+
+
+            }
 
 
 
