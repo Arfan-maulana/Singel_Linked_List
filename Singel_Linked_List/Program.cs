@@ -158,7 +158,70 @@ namespace Singel_Linked_List
                     Console.WriteLine("5. Exit ");
                     Console.WriteLine("\nEnter your choice (1-5) :");
                     char ch = Convert.ToChar(Console.ReadLine());
+                    switch(ch)
+                    {
+                        case '1':
+                            {
+                                obj.addnote();
+                            }
+                            break;
 
+                        case '2':
+                            {
+
+                                if(obj.listEmpty())
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break;
+                                }
+                                Console.WriteLine("Enter the roll number of" + "the student whose record is to be deleted :");
+                                int rollNo= Convert.ToInt32(Console.ReadLine());
+                                if (obj.delnote(rollNo) == false)
+                                    Console.WriteLine("\n Record not found");
+                                else
+                                    Console.WriteLine("Recordwith roll number" + rollNo + "Deleted");
+                            }   
+                            break ;
+
+                        case'3':
+                            {
+                                obj.Treverse();
+                            }
+                            break;
+
+                        case '4':
+                            {
+                                if (obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\nList is Empty");
+                                    break;
+                                }
+                                Node previous, current;
+                                previous = current = null;
+                                Console.Write("\nEnter the roll number of the " + "Student whole record is to be searched:");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if (obj.Search(num, ref previous, ref current) == false)
+                                    Console.WriteLine("\nRecord Not Found ");
+                                else
+                                {
+                                    Console.WriteLine("\nRecord Not Found ");
+                                    Console.WriteLine("\nRoll nuumber: " + current.RollNumber);
+                                    Console.WriteLine("\nName: " + current.Name);
+                                }
+
+                            }
+                            break;
+
+                                case '5':
+                                    return;
+                               default:
+                            {
+                                Console.WriteLine("\nInvalid Option");
+                                break;
+                            }
+
+                            
+                    }   
                 }
             }
 
