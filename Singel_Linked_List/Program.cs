@@ -46,10 +46,10 @@ namespace Singel_Linked_List
             //if the node to be inserted is the first node
             if (START == null || (rollNo <= START.RollNumber))
             {
-                if (START != null && (rollNo == START.RollNumber))
+                if ((START != null) && (rollNo == START.RollNumber))
                 {
 
-                    Console.WriteLine();
+                    Console.WriteLine("\nDuplicste roll numbers not allowed\n");
                     return;
 
 
@@ -71,7 +71,7 @@ namespace Singel_Linked_List
             {
                 if (rollNo == current.RollNumber)
                 {
-                    Console.WriteLine();
+                    Console.WriteLine("\nDuplicated roll numbers not allowed\n");
                     return;
 
                 }
