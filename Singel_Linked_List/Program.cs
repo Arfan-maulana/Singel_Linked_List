@@ -12,9 +12,6 @@ namespace Singel_Linked_List
         public int RollNumber;
         public string Name;
         public Node Next;
-
-
-
     }
 
 
